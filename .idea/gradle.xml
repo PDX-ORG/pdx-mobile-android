@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <compositeConfiguration>
+          <compositeBuild compositeDefinitionSource="SCRIPT">
+            <builds>
+              <build path="$PROJECT_DIR$/sources/plugins/android" name="android">
+                <projects>
+                  <project path="$PROJECT_DIR$/sources/plugins/android" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/sources/plugins" name="lexadky-template-android-build-preset">
+                <projects>
+                  <project path="$PROJECT_DIR$/sources/plugins" />
+                  <project path="$PROJECT_DIR$/sources/plugins/module-generator" />
+                  <project path="$PROJECT_DIR$/sources/plugins/preset" />
+                </projects>
+              </build>
+            </builds>
+          </compositeBuild>
+        </compositeConfiguration>
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/sources" />
+            <option value="$PROJECT_DIR$/sources/libs" />
+            <option value="$PROJECT_DIR$/sources/libs/uikit" />
+            <option value="$PROJECT_DIR$/sources/plugins" />
+            <option value="$PROJECT_DIR$/sources/plugins/android" />
+            <option value="$PROJECT_DIR$/sources/plugins/module-generator" />
+            <option value="$PROJECT_DIR$/sources/plugins/preset" />
+            <option value="$PROJECT_DIR$/sources/targets" />
+            <option value="$PROJECT_DIR$/sources/targets/app" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>
