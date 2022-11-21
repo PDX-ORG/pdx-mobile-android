@@ -5,6 +5,7 @@ package io.github.lexadiky.pdx.feature.news
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -53,17 +54,23 @@ internal fun NewsFeedPageImpl(viewModel: NewsFeedViewModel) {
         viewModel.dismissError()
     }
     LazyColumn(
-        verticalArrangement = Arrangement.spacedBy(MaterialTheme.sizes.s2)
+        verticalArrangement = Arrangement.spacedBy(MaterialTheme.sizes.s2),
+        contentPadding = PaddingValues(MaterialTheme.sizes.s2)
     ) {
         items(viewModel.state.items) { item ->
-            NewsFeedItem(item)
+            NewsFeedItem(
+                item = item,
+                onItemClick = { viewModel.openNewsItem(item) },
+                onAuthorClicked = { viewModel.openNewsItemAuthor(item) }
+            )
         }
     }
 }
 
 @Composable
-private fun NewsFeedItem(item: NewsFeedItem) {
+private fun NewsFeedItem(item: NewsFeedItem, onItemClick: () -> Unit, onAuthorClicked: () -> Unit) {
     Card(
+        onClick = { onItemClick() },
         Modifier.fillMaxWidth()
     ) {
         Column(
@@ -103,7 +110,7 @@ private fun NewsFeedItem(item: NewsFeedItem) {
                             tint = MaterialTheme.colorScheme.pdx.externalBrands.reddit
                         )
                     },
-                    onClick = { /*TODO*/ }
+                    onClick = { onAuthorClicked() }
                 )
 
                 Text(text = item.time.render().value)

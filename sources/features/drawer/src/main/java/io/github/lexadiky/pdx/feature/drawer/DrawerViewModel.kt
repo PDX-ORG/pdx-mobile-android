@@ -14,6 +14,7 @@ import io.github.lexadiky.pdx.lib.navigation.Navigator
 import io.github.lexadiky.pdx.lib.resources.image.ImageResource
 import io.github.lexadiky.pdx.lib.resources.image.from
 import io.github.lexadiky.pdx.lib.resources.string.*
+import io.github.lexadiky.pdx.lib.uikit.R.*
 import kotlinx.coroutines.launch
 
 internal class DrawerViewModel(
@@ -28,10 +29,10 @@ internal class DrawerViewModel(
             items = listOf(
                 DrawerItem.UserAccount,
                 DrawerItem.Navigation(
-                    icon = ImageResource.from(Icons.Default.Build),
-                    title = StringResource.from("Item"),
+                    icon = ImageResource.from(drawable.uikit_ic_pokeball),
+                    title = StringResource.from(R.string.drawer_item_pokemon_title),
                     selected = false,
-                    route = "pdx://index"
+                    route = "pdx://pokemon"
                 ),
                 DrawerItem.Navigation(
                     icon = ImageResource.from(Icons.Default.Build),

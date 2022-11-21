@@ -11,4 +11,5 @@ dependencies {
     api(libs.android.navigation.compose)
     implementation(projects.libs.arc)
     implementation(projects.libs.analytics)
+    implementation(projects.libs.uikit)
 }

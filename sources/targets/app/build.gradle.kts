@@ -20,6 +20,7 @@ dependencies {
     implementation(projects.features.drawer)
     implementation(projects.features.news)
     implementation(projects.features.settings)
+    implementation(projects.features.pokemonList)
 
     testImplementation(libs.junit4.core)
     androidTestImplementation(libs.android.test.junit4)

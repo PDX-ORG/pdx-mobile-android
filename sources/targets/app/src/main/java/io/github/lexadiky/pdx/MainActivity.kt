@@ -18,6 +18,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.composable
 import io.github.lexadiky.pdx.feature.drawer.Drawer
 import io.github.lexadiky.pdx.feature.news.NewsFeedPage
+import io.github.lexadiky.pdx.feature.pokemon.list.PokemonListPage
 import io.github.lexadiky.pdx.feature.settings.SettingsPage
 import io.github.lexadiky.pdx.feature.toolbar.Toolbar
 import io.github.lexadiky.pdx.feature.toolbar.rememberToolbarConnector
@@ -68,27 +69,14 @@ class MainActivity : ComponentActivity() {
                                 composable("pdx://news") {
                                     NewsFeedPage()
                                 }
+                                composable("pdx://pokemon") {
+                                    PokemonListPage()
+                                }
                             }
                         }
                     }
                 )
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    PdxTheme {
-        Greeting("Android")
     }
 }

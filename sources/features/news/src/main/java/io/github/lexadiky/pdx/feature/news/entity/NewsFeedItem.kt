@@ -8,6 +8,7 @@ internal data class NewsFeedItem(
     val uri: URI,
     val title: StringResource,
     val author: String,
+    val authorUri: URI,
     val preview: ImageResource?,
     val time: StringResource
 )

@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "io.github.lexadiky.pdx.feature.news"
+    namespace = "io.github.lexadiky.pdx.feature.pokemonlist"
 }
 
 dependencies {
@@ -14,4 +14,5 @@ dependencies {
     implementation(projects.libs.network)
     implementation(projects.libs.errorHandler)
     implementation(projects.libs.navigation)
+    implementation(projects.libs.blogger)
 }

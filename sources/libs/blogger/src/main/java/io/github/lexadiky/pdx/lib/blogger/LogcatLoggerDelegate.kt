@@ -26,7 +26,7 @@ internal class LogcatLoggerDelegate : LoggerDelegate {
     }
 
     override fun tag(tag: String) = apply {
-        tagHolder.set(null)
+        tagHolder.set(tag)
     }
 
     private fun <T> ThreadLocal<T>.consume(): T? = get().also { set(null) }

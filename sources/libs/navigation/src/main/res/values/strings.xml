@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="navigation_404_title">404</string>
+    <string name="navigation_404_subtitle">Sorry, cant find required destination</string>
+
+</resources>

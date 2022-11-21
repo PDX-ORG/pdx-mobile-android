@@ -15,6 +15,7 @@ internal class GetNewsFeedUseCase(private val redditNewsClient: RedditNewsClient
         children.map { child ->
             NewsFeedItem(
                 uri = URI.create(child.data.url),
+                authorUri = URI.create(USER_LINK + child.data.author),
                 title = StringResource.from(child.data.title),
                 author = child.data.author,
                 preview = child.data.preview?.images?.firstOrNull()?.resolutions?.lastOrNull()?.url?.let { ImageResource.from(it) },
@@ -24,6 +25,11 @@ internal class GetNewsFeedUseCase(private val redditNewsClient: RedditNewsClient
         }
     }.mapLeft { error ->
         GetNewsFeedUseCaseError
+    }
+
+    companion object {
+
+        private const val USER_LINK = "https://www.reddit.com/user/"
     }
 }
 

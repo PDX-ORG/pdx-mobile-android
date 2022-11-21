@@ -12,15 +12,18 @@ import java.io.File
 
 val NetworkModule by module {
     single {
+        Json {
+            prettyPrint = true
+            isLenient = true
+            ignoreUnknownKeys = true
+            coerceInputValues = true
+        }
+    }
+    single {
         val context: Context = inject()
         HttpClient(OkHttp) {
             install(ContentNegotiation) {
-                json(Json {
-                    prettyPrint = true
-                    isLenient = true
-                    ignoreUnknownKeys = true
-                    coerceInputValues = true
-                })
+                json(inject())
             }
             engine {
                 config {
