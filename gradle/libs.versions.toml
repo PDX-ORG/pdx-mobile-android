@@ -1,12 +1,18 @@
 [versions]
 
 android-compose = "1.3.0"
+ktor = "2.1.3"
 
 [libraries]
+
+kotlin-coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4"
+kotlin-serialization-json = "org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1"
+kotlin-datetime = "org.jetbrains.kotlinx:kotlinx-datetime:0.4.0"
 
 android-core = "androidx.core:core-ktx:1.9.0"
 android-lifecycle-runtime = "androidx.lifecycle:lifecycle-runtime-ktx:2.5.1"
 android-activity-compose = "androidx.activity:activity-compose:1.6.1"
+android-material = "com.google.android.material:material:1.8.0-alpha02"
 
 android-compose-ui-core = { module = "androidx.compose.ui:ui", version.ref = "android.compose" }
 android-compose-ui-graphics = { module = "androidx.compose.ui:ui-graphics", version.ref = "android.compose" }
@@ -14,11 +20,26 @@ android-compose-ui-preview = { module = "androidx.compose.ui:ui-tooling-preview"
 android-compose-ui-test = { module = "androidx.compose.ui:ui-test-junit4", version.ref = "android.compose" }
 android-compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "android.compose" }
 android-compose-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "android.compose" }
-
 android-compose-material3 = "androidx.compose.material3:material3:1.0.0"
+android-compose-viewmodel = "androidx.lifecycle:lifecycle-viewmodel-compose:2.5.1"
+
+android-navigation-compose = "androidx.navigation:navigation-compose:2.5.3"
 
 android-test-junit4 = "androidx.test.ext:junit:1.1.3"
 android-test-espresso = "androidx.test.espresso:espresso-core:3.4.0"
+
 junit4-core = "junit:junit:4.13.2"
+
+coil-compose-base = "io.coil-kt:coil-compose-base:2.2.2"
+
+arrow-core = "io.arrow-kt:arrow-core:1.1.2"
+
+koin-compose = "io.insert-koin:koin-androidx-compose:3.3.0"
+
+
+ktor-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
+ktor-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor" }
+ktor-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
+ktor-contentNegotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
 
 [plugins]

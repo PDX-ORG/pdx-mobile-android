@@ -23,15 +23,18 @@ dependencyResolutionManagement {
 rootProject.name = "pdx-mobile"
 
 includeBuild("sources/plugins")
-includeRecursive(file("sources"))
+includeRecursive("sources")
 
-fun includeRecursive(dir: File) {
+fun includeRecursive(path: String) {
+    val dir = file(path)
     dir.walkTopDown().maxDepth(3).forEach { subDir ->
         if (isModule(subDir)) {
             val moduleName = createModuleName(subDir, dir)
 
-            include(moduleName)
-            project(moduleName).projectDir = subDir
+            if (!moduleName.startsWith(":plugins")) {
+                include(moduleName)
+                project(moduleName).projectDir = subDir
+            }
         }
     }
 }
@@ -53,5 +56,5 @@ fun createModuleName(subDir: File, dir: File): String {
             currentDir.parentFile
         }
     }
-    return moduleName
+    return moduleName.removePrefix(":sources")
 }

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="error_handler_error_message_unknown">Unknown error occurred</string>
+    <string name="error_handler_dialog_title">Error</string>
+    <string name="error_handler_dialog_dismiss">Ok</string>
+
+</resources>

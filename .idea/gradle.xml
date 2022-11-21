@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
@@ -27,15 +28,25 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/sources" />
-            <option value="$PROJECT_DIR$/sources/libs" />
+            <option value="$PROJECT_DIR$/features" />
+            <option value="$PROJECT_DIR$/libs" />
+            <option value="$PROJECT_DIR$/sources/features/drawer" />
+            <option value="$PROJECT_DIR$/sources/features/news" />
+            <option value="$PROJECT_DIR$/sources/features/settings" />
+            <option value="$PROJECT_DIR$/sources/features/toolbar" />
+            <option value="$PROJECT_DIR$/sources/libs/arc" />
+            <option value="$PROJECT_DIR$/sources/libs/blogger" />
+            <option value="$PROJECT_DIR$/sources/libs/error-handler" />
+            <option value="$PROJECT_DIR$/sources/libs/navigation" />
+            <option value="$PROJECT_DIR$/sources/libs/network" />
+            <option value="$PROJECT_DIR$/sources/libs/resources" />
             <option value="$PROJECT_DIR$/sources/libs/uikit" />
             <option value="$PROJECT_DIR$/sources/plugins" />
             <option value="$PROJECT_DIR$/sources/plugins/android" />
             <option value="$PROJECT_DIR$/sources/plugins/module-generator" />
             <option value="$PROJECT_DIR$/sources/plugins/preset" />
-            <option value="$PROJECT_DIR$/sources/targets" />
             <option value="$PROJECT_DIR$/sources/targets/app" />
+            <option value="$PROJECT_DIR$/targets" />
           </set>
         </option>
       </GradleProjectSettings>

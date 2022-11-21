@@ -4,8 +4,6 @@ plugins {
 }
 
 android {
-    namespace = "io.github.lexadiky.pdx.library.uikit"
-
     defaultConfig {
         minSdk = 24
         targetSdk = 33
@@ -36,4 +34,8 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+}
+
+dependencies {
+    implementation libs.kotlin.datetime
 }

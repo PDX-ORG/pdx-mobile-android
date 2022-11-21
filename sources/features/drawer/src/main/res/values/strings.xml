@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="drawer_item_news_title">News</string>
+    <string name="drawer_item_settings_title">Settings</string>
+
+</resources>
