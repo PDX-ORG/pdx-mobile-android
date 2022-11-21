@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "821720246197",
+    "project_id": "pdx-application",
+    "storage_bucket": "pdx-application.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:821720246197:android:877d54d7aadbacab1bdbfc",
+        "android_client_info": {
+          "package_name": "io.github.lexadiky.pdx"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "821720246197-ng1ejr5f6qth98i3gio0muoiacb37ekb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANRSCjYQbVAifSTs3qrJeIBZNaQWJDwpM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "821720246197-ng1ejr5f6qth98i3gio0muoiacb37ekb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

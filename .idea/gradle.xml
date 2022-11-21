@@ -34,6 +34,7 @@
             <option value="$PROJECT_DIR$/sources/features/news" />
             <option value="$PROJECT_DIR$/sources/features/settings" />
             <option value="$PROJECT_DIR$/sources/features/toolbar" />
+            <option value="$PROJECT_DIR$/sources/libs/analytics" />
             <option value="$PROJECT_DIR$/sources/libs/arc" />
             <option value="$PROJECT_DIR$/sources/libs/blogger" />
             <option value="$PROJECT_DIR$/sources/libs/error-handler" />

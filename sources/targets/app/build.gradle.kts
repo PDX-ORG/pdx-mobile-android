@@ -15,6 +15,7 @@ dependencies {
     implementation(projects.libs.arc)
     implementation(projects.libs.network)
     implementation(projects.libs.navigation)
+    implementation(projects.libs.analytics)
     implementation(projects.features.toolbar)
     implementation(projects.features.drawer)
     implementation(projects.features.news)

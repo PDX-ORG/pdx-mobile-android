@@ -41,12 +41,14 @@ import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.core.graphics.toColor
 import com.google.android.material.color.utilities.Scheme
 import com.google.android.material.color.utilities.TonalPalette
+import io.github.lexadiky.pdx.feature.settings.R.*
 import io.github.lexadiky.pdx.lib.arc.di.DIFeature
 import io.github.lexadiky.pdx.lib.arc.di.di
 import io.github.lexadiky.pdx.lib.uikit.R
@@ -69,7 +71,10 @@ private fun SettingsPageImpl(viewModel: SettingsPageViewModel) {
     ) {
         item {
             Text(
-                text = "Theme: ${viewModel.state.currentTheme?.id}",
+                text = stringResource(
+                    id = string.settings_themes_header,
+                    viewModel.state.currentTheme?.id.orEmpty()
+                ),
                 style = MaterialTheme.typography.headlineLarge,
                 fontWeight = FontWeight.SemiBold,
                 modifier = Modifier.padding(MaterialTheme.sizes.s2)
@@ -83,18 +88,18 @@ private fun SettingsPageImpl(viewModel: SettingsPageViewModel) {
         }
         item {
             ListItem(
-                headlineText = { Text(text = "Start / Report issue on Github") },
-                supportingText = { Text(text = "Developers will appreciate both") },
+                headlineText = { Text(text = stringResource(id = string.settings_github_header)) },
+                supportingText = { Text(text = stringResource(id = string.settings_github_description)) },
                 trailingContent = {
                     Icon(painterResource(R.drawable.uikit_ic_github), null)
                 },
-                modifier = Modifier.clickable {  }
+                modifier = Modifier.clickable { viewModel.openGithub() }
             )
         }
         item {
             ListItem(
-                headlineText = { Text(text = "Drop cached data") },
-                supportingText = { Text(text = "Use this is something seems wrong, or you whant to update whole application data") },
+                headlineText = { Text(text = stringResource(id = string.settings_cache_header)) },
+                supportingText = { Text(text = stringResource(id = string.settings_cache_description)) },
                 trailingContent = {
                     Icon(Icons.Default.Delete, null)
                 },

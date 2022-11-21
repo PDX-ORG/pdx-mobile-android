@@ -42,4 +42,7 @@ ktor-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor" }
 ktor-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
 ktor-contentNegotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
 
+firebase-bom = "com.google.firebase:firebase-bom:31.1.0"
+firebase-analytics = { module = "com.google.firebase:firebase-analytics" }
+
 [plugins]

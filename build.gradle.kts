@@ -4,3 +4,14 @@ plugins {
     id("org.jetbrains.kotlin.android").version("1.7.20").apply(false)
     kotlin("plugin.serialization").version("1.7.20").apply(false)
 }
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+
+    }
+    dependencies {
+        classpath("com.google.gms:google-services:4.3.14")
+    }
+}

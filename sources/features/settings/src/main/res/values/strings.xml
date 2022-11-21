@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="settings_themes_header">Theme: %s</string>
+
+    <string name="settings_github_header">Start / Report issue on Github</string>
+    <string name="settings_github_description">Developers will appreciate both</string>
+
+    <string name="settings_cache_header">Drop cached data</string>
+    <string name="settings_cache_description">Use this is something seems wrong, or you want to update whole application data</string>
+
+</resources>

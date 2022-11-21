@@ -34,8 +34,10 @@ import io.github.lexadiky.pdx.ui.uikit.image.transformation.CropTransparentTrans
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val application = application as PdxApplication
+
         setContent {
-            DIApplication(NetworkModule, module { single<Context> { this@MainActivity } }.value) {
+            DIApplication(application.startupModules) {
                 Content()
             }
         }

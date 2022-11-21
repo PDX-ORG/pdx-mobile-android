@@ -2,6 +2,7 @@ package io.github.lexadiky.pdx.lib.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavGraphBuilder
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import io.github.lexadiky.pdx.lib.arc.di.DIFeature
@@ -21,7 +22,8 @@ fun NavigationFeature(content: @Composable NavigationFeatureContext.() -> Unit) 
 
 @Composable
 fun NavigationFeatureContext.NavigationHost(buildFn: NavGraphBuilder.() -> Unit) {
-    NavHost(navController = di.inject(), startDestination = START_DESTINATION) {
+    val navController = di.inject<NavHostController>()
+    NavHost(navController = navController, startDestination = START_DESTINATION) {
         buildFn()
     }
 }

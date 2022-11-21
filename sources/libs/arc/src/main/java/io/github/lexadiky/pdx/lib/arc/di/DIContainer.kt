@@ -36,7 +36,7 @@ private val LocalDIContainer = compositionLocalOf<DIContainer> {
 }
 
 @Composable
-fun DIApplication(vararg modules: DIModule, content: @Composable () -> Unit) {
+fun DIApplication(modules: List<DIModule>, content: @Composable () -> Unit) {
     val diContainer = remember {
         DIContainer(
             koinApplication { modules(modules.map { it.koinModule }) }

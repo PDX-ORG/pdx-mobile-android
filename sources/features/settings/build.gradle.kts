@@ -13,4 +13,5 @@ dependencies {
     implementation(projects.libs.uikit)
     implementation(projects.libs.network)
     implementation(projects.libs.errorHandler)
+    implementation(projects.libs.navigation)
 }

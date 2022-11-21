@@ -14,28 +14,33 @@ class ModuleBuilder(@PublishedApi internal val module: Module) {
     inline fun <reified T> single(crossinline provider: DIScope.(DIParametersHolder) -> T) {
         module.single(definition = { params ->
             val diParametersHolder = DIParametersHolder(params)
-            DIScope(this).provider(diParametersHolder) })
+            DIScope(this).provider(diParametersHolder)
+        })
     }
 
-    inline fun <reified T: ViewModel> viewModel(crossinline provider: DIScope.(DIParametersHolder) -> T) {
+    inline fun <reified T : ViewModel> viewModel(crossinline provider: DIScope.(DIParametersHolder) -> T) {
         module.viewModel(definition = { params ->
             val diParametersHolder = DIParametersHolder(params)
-            DIScope(this).provider(diParametersHolder) })
+            DIScope(this).provider(diParametersHolder)
+        })
     }
 
     @JvmInline
     value class DIScope(@PublishedApi internal val scope: Scope) {
 
-        inline fun <reified T: Any> inject() = scope.get<T>()
+        inline fun <reified T : Any> inject() = scope.get<T>()
     }
 
     @JvmInline
     value class DIParametersHolder(@PublishedApi internal val parameters: ParametersHolder) {
 
-        inline fun <reified T: Any> get(): T = parameters.get()
+        inline fun <reified T : Any> get(): T = parameters.get()
     }
 }
 
 fun module(definition: ModuleBuilder.() -> Unit): Lazy<DIModule> = lazy {
-    DIModule(ModuleBuilder(module {  }).apply(definition).module)
+    DIModule(ModuleBuilder(module { }).apply(definition).module)
 }
+
+fun eagerModule(definition: ModuleBuilder.() -> Unit): DIModule =
+    DIModule(ModuleBuilder(module { }).apply(definition).module)
