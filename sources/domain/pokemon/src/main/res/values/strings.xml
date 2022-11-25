@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="domain_pokemon_type_fire">Fire</string>
+    <string name="domain_pokemon_type_water">Water</string>
+    <string name="domain_pokemon_type_grass">Grass</string>
+    <string name="domain_pokemon_type_ice">Ice</string>
+    <string name="domain_pokemon_type_bug">Bug</string>
+    <string name="domain_pokemon_type_steel">Steel</string>
+    <string name="domain_pokemon_type_dark">Dark</string>
+    <string name="domain_pokemon_type_dragon">Dragon</string>
+    <string name="domain_pokemon_type_normal">Normal</string>
+    <string name="domain_pokemon_type_poison">Poison</string>
+    <string name="domain_pokemon_type_ghost">Ghost</string>
+    <string name="domain_pokemon_type_flying">Flying</string>
+    <string name="domain_pokemon_type_electric">Electric</string>
+    <string name="domain_pokemon_type_ground">Ground</string>
+    <string name="domain_pokemon_type_fairy">Fairy</string>
+    <string name="domain_pokemon_type_fighting">Fighting</string>
+    <string name="domain_pokemon_type_psychic">Psychic</string>
+    <string name="domain_pokemon_type_rock">Rock</string>
+
+</resources>

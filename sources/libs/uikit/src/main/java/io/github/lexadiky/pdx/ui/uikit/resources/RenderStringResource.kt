@@ -4,10 +4,13 @@ import android.text.format.DateFormat
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.State
+import androidx.compose.runtime.derivedStateOf
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import io.github.lexadiky.pdx.lib.resources.string.FormattedStringResource
 import io.github.lexadiky.pdx.lib.resources.string.LiteralStringResource
 import io.github.lexadiky.pdx.lib.resources.string.ResStringResource
 import io.github.lexadiky.pdx.lib.resources.string.StringResource
@@ -32,6 +35,12 @@ fun StringResource.render(): State<String> {
                 val formatted = DateFormat.getDateFormat(context)
                     .format(Date(instant.epochSeconds * 1000))
                 mutableStateOf(formatted)
+            }
+        }
+        is FormattedStringResource -> {
+            val renderedBase by this.base.render()
+            remember {
+                derivedStateOf { renderedBase.format(*this.arguments) }
             }
         }
     }

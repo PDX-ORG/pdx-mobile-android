@@ -29,8 +29,10 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/domain" />
             <option value="$PROJECT_DIR$/features" />
             <option value="$PROJECT_DIR$/libs" />
+            <option value="$PROJECT_DIR$/sources/domain/pokemon" />
             <option value="$PROJECT_DIR$/sources/features/drawer" />
             <option value="$PROJECT_DIR$/sources/features/news" />
             <option value="$PROJECT_DIR$/sources/features/pokemon-list" />

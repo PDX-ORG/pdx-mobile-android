@@ -15,11 +15,6 @@ import io.github.lexadiky.pdx.ui.uikit.image.transformation.CropTransparentTrans
 
 @Composable
 fun ImageResource.render(transformations: List<ImageTransformation> = emptyList()): Painter {
-    BLogger.assert(
-        message = "transformation not applicable to $this",
-        condition = this !is UrlImageResource && transformations.isNotEmpty()
-    )
-
     return when (this) {
         is ImageVectorImageResource -> rememberVectorPainter(image = this.vector)
         is UrlImageResource -> rememberAsyncImagePainter(this.url) {

@@ -10,6 +10,7 @@ import arrow.core.Either
 import io.github.lexadiky.pdx.feature.pokemon.list.entity.PokemonListEntry
 import io.github.lexadiky.pdx.feature.pokemon.list.entity.domain.PokemonLanguage
 import io.github.lexadiky.pdx.feature.pokemon.list.usecase.GetPokemonUseCase
+import io.github.lexadiky.pdx.feature.pokemonlist.R
 import io.github.lexadiky.pdx.lib.resources.color.*
 import io.github.lexadiky.pdx.lib.resources.image.*
 import io.github.lexadiky.pdx.lib.resources.string.*
@@ -33,6 +34,8 @@ internal class PokemonListViewModel(
             val entries = result.value.map { pokemon ->
                 PokemonListEntry(
                     id = pokemon.name,
+                    nationalId = StringResource.from(R.string.pokemon_list_national_id_template)
+                        .format(pokemon.nationalDexNumber),
                     name = StringResource.from(pokemon.localNames[PokemonLanguage.ENGLISH]!!),
                     primaryColor = ColorResource.from(Color.Yellow),
                     secondaryColor = ColorResource.from(Color.Red),
@@ -40,6 +43,7 @@ internal class PokemonListViewModel(
                         ?: ImageResource.from(io.github.lexadiky.pdx.lib.uikit.R.drawable.uikit_ic_pokeball),
                     alternativeImage = pokemon.shinySprite?.let { ImageResource.from(it) }
                         ?: ImageResource.from(io.github.lexadiky.pdx.lib.uikit.R.drawable.uikit_ic_pokeball),
+                    types = pokemon.types
                 )
             }
             state = state.copy(items = entries)

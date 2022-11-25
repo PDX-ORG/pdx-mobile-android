@@ -1,5 +1,6 @@
 package io.github.lexadiky.pdx.feature.pokemon.list.entity.domain
 
+import io.github.lexadiky.pdx.domain.pokemon.entity.PokemonType
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
@@ -16,5 +17,5 @@ internal class PokemonPreview(
     @SerialName("shiny_sprite")
     val shinySprite: String?,
     @SerialName("types")
-    val types: List<String>
+    val types: List<PokemonType>
 )

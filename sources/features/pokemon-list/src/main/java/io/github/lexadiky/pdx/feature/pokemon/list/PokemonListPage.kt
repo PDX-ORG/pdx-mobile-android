@@ -17,6 +17,7 @@ import io.github.lexadiky.pdx.lib.arc.di.di
 import io.github.lexadiky.pdx.ui.uikit.resources.ImageTransformation
 import io.github.lexadiky.pdx.ui.uikit.resources.render
 import io.github.lexadiky.pdx.ui.uikit.theme.sizes
+import io.github.lexadiky.pdx.ui.uikit.widget.TagItem
 
 @Composable
 fun PokemonListPage() {
@@ -33,11 +34,12 @@ private fun PokemonListPageImpl(viewModel: PokemonListViewModel) {
     ) {
         items(viewModel.state.items) { entry ->
             LargeWikiPreview(
+                preTitle = entry.nationalId.render().value,
                 title = entry.name.render().value,
                 image = pokemonImagePainter(entry, viewModel.state.useAlternativeImages),
                 primaryColor = Color.Red,
                 secondaryColor = Color.Yellow,
-                tags = listOf("Fire", "Water"),
+                tags = entry.types.map { TagItem(it.toStringResource(), it.toColorResource()) },
                 onClick = { /*TODO*/ },
                 modifier = Modifier.fillMaxWidth()
             )

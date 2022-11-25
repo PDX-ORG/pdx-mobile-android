@@ -15,4 +15,6 @@ dependencies {
     implementation(projects.libs.errorHandler)
     implementation(projects.libs.navigation)
     implementation(projects.libs.blogger)
+
+    implementation(projects.domain.pokemon)
 }
