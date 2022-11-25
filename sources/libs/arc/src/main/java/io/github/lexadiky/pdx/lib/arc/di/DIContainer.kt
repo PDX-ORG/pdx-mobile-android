@@ -14,6 +14,10 @@ import org.koin.dsl.koinApplication
 
 class DIContainer(@PublishedApi internal val application: KoinApplication) {
 
+    constructor(vararg modules: DIModule) : this(koinApplication {
+        modules(modules.map { it.koinModule })
+    })
+
     @Composable
     inline fun <reified T> inject(): T {
         return remember {
@@ -22,12 +26,16 @@ class DIContainer(@PublishedApi internal val application: KoinApplication) {
     }
 
     @Composable
-    inline fun <reified T: Any> inject(vararg paramerers: Any): T {
+    inline fun <reified T : Any> inject(vararg paramerers: Any): T {
         return remember {
             application.koin.get {
                 parametersOf(*paramerers)
             }
         }
+    }
+
+    inline fun <reified T : Any> lookup(): T {
+        return application.koin.get()
     }
 }
 
@@ -36,13 +44,8 @@ private val LocalDIContainer = compositionLocalOf<DIContainer> {
 }
 
 @Composable
-fun DIApplication(modules: List<DIModule>, content: @Composable () -> Unit) {
-    val diContainer = remember {
-        DIContainer(
-            koinApplication { modules(modules.map { it.koinModule }) }
-        )
-    }
-    CompositionLocalProvider(LocalDIContainer provides diContainer) {
+fun DIApplication(container: DIContainer, content: @Composable () -> Unit) {
+    CompositionLocalProvider(LocalDIContainer provides container) {
         content()
     }
 }

@@ -23,6 +23,7 @@ fun ImageResource.render(transformations: List<ImageTransformation> = emptyList(
     return when (this) {
         is ImageVectorImageResource -> rememberVectorPainter(image = this.vector)
         is UrlImageResource -> rememberAsyncImagePainter(this.url) {
+            crossfade(true)
             transformations(transformations.map { transformation ->
                 when (transformation) {
                     ImageTransformation.CROP_TRANSPARTENT -> CropTransparentTransformation

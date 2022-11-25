@@ -1,4 +1,4 @@
-package io.github.lexadiky.pdx.ui.theme
+package io.github.lexadiky.pdx.ui.uikit.theme
 
 import android.app.Activity
 import android.os.Build

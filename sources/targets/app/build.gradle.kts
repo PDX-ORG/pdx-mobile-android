@@ -13,9 +13,11 @@ android {
 dependencies {
     implementation(projects.libs.uikit)
     implementation(projects.libs.arc)
+    implementation(projects.libs.featureToggle)
     implementation(projects.libs.network)
     implementation(projects.libs.navigation)
     implementation(projects.libs.analytics)
+    implementation(projects.libs.blogger)
     implementation(projects.features.toolbar)
     implementation(projects.features.drawer)
     implementation(projects.features.news)

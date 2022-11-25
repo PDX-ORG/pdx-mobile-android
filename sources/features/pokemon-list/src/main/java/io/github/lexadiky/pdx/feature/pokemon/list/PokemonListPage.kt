@@ -9,7 +9,9 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import io.github.lexadiky.pdx.LargeWikiPreview
+import androidx.compose.ui.graphics.painter.Painter
+import io.github.lexadiky.pdx.feature.pokemon.list.entity.PokemonListEntry
+import io.github.lexadiky.pdx.ui.uikit.widget.LargeWikiPreview
 import io.github.lexadiky.pdx.lib.arc.di.DIFeature
 import io.github.lexadiky.pdx.lib.arc.di.di
 import io.github.lexadiky.pdx.ui.uikit.resources.ImageTransformation
@@ -32,9 +34,7 @@ private fun PokemonListPageImpl(viewModel: PokemonListViewModel) {
         items(viewModel.state.items) { entry ->
             LargeWikiPreview(
                 title = entry.name.render().value,
-                image = entry.image.render(
-                    listOf(ImageTransformation.CROP_TRANSPARTENT)
-                ),
+                image = pokemonImagePainter(entry, viewModel.state.useAlternativeImages),
                 primaryColor = Color.Red,
                 secondaryColor = Color.Yellow,
                 tags = listOf("Fire", "Water"),
@@ -42,5 +42,14 @@ private fun PokemonListPageImpl(viewModel: PokemonListViewModel) {
                 modifier = Modifier.fillMaxWidth()
             )
         }
+    }
+}
+
+@Composable
+private fun pokemonImagePainter(entry: PokemonListEntry, useAlternativeImages: Boolean): Painter {
+    return if (useAlternativeImages) {
+        entry.alternativeImage.render(listOf(ImageTransformation.CROP_TRANSPARTENT))
+    } else {
+        entry.image.render(listOf(ImageTransformation.CROP_TRANSPARTENT))
     }
 }

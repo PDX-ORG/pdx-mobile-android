@@ -9,60 +9,32 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import io.github.lexadiky.pdx.feature.drawer.domain.DrawerItemSource
 import io.github.lexadiky.pdx.feature.drawer.entity.DrawerItem
 import io.github.lexadiky.pdx.lib.navigation.Navigator
 import io.github.lexadiky.pdx.lib.resources.image.ImageResource
 import io.github.lexadiky.pdx.lib.resources.image.from
 import io.github.lexadiky.pdx.lib.resources.string.*
 import io.github.lexadiky.pdx.lib.uikit.R.*
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
 internal class DrawerViewModel(
-    private val navigator: Navigator
+    private val navigator: Navigator,
+    private val drawerItemSource: DrawerItemSource
 ) : ViewModel() {
 
     var state by mutableStateOf(DrawerState())
         private set
 
     init {
-        state = state.copy(
-            items = listOf(
-                DrawerItem.UserAccount,
-                DrawerItem.Navigation(
-                    icon = ImageResource.from(drawable.uikit_ic_pokeball),
-                    title = StringResource.from(R.string.drawer_item_pokemon_title),
-                    selected = false,
-                    route = "pdx://pokemon"
-                ),
-                DrawerItem.Navigation(
-                    icon = ImageResource.from(Icons.Default.Build),
-                    title = StringResource.from("Item"),
-                    selected = false,
-                    route = "pdx://index"
-                ),
-                DrawerItem.Navigation(
-                    icon = ImageResource.from(Icons.Default.Build),
-                    title = StringResource.from("Item"),
-                    selected = false,
-                    route = "pdx://index"
-                ),
-                DrawerItem.Divider,
-                DrawerItem.Navigation(
-                    icon = ImageResource.from(Icons.Default.Notifications),
-                    title = StringResource.from(R.string.drawer_item_news_title),
-                    selected = false,
-                    route = "pdx://news"
-                ),
-                DrawerItem.Navigation(
-                    icon = ImageResource.from(Icons.Default.Settings),
-                    title = StringResource.from(R.string.drawer_item_settings_title),
-                    selected = false,
-                    route = "pdx://settings"
-                ),
-                DrawerItem.Divider,
-                DrawerItem.Login
-            )
-        )
+        viewModelScope.launch {
+            drawerItemSource.get().collectLatest { newItems ->
+                state = state.copy(
+                    items = newItems
+                )
+            }
+        }
     }
 
     fun onItemClicked(drawerItem: DrawerItem) {

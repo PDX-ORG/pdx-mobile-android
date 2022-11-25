@@ -3,12 +3,14 @@ package io.github.lexadiky.pdx.lib.navigation
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
+import androidx.navigation.NavGraph
 import androidx.navigation.NavHostController
 
 
 class Navigator internal constructor(
     private val context: Context,
     private val controller: NavHostController,
+    private val navGraph: NavGraph,
     private val navigationEventsSpec: NavigationEventsSpec
 ) {
 
@@ -22,6 +24,10 @@ class Navigator internal constructor(
         } else {
             controller.navigate(route)
         }
+    }
+
+    suspend fun hasRoute(route: String): Boolean {
+        return navGraph.findNode(route) != null
     }
 
     companion object {

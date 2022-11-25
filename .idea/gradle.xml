@@ -25,6 +25,7 @@
         <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleJvm" value="Embedded JDK" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
@@ -39,6 +40,7 @@
             <option value="$PROJECT_DIR$/sources/libs/arc" />
             <option value="$PROJECT_DIR$/sources/libs/blogger" />
             <option value="$PROJECT_DIR$/sources/libs/error-handler" />
+            <option value="$PROJECT_DIR$/sources/libs/feature-toggle" />
             <option value="$PROJECT_DIR$/sources/libs/navigation" />
             <option value="$PROJECT_DIR$/sources/libs/network" />
             <option value="$PROJECT_DIR$/sources/libs/resources" />

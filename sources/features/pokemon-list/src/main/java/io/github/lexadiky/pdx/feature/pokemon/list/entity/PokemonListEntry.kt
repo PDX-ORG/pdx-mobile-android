@@ -9,5 +9,6 @@ internal data class PokemonListEntry(
     val name: StringResource,
     val primaryColor: ColorResource,
     val secondaryColor: ColorResource,
-    val image: ImageResource
+    val image: ImageResource,
+    val alternativeImage: ImageResource
 )
