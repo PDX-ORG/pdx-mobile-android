@@ -1,6 +1,7 @@
 package io.github.lexadiky.pdx
 
 import android.app.Application
+import com.google.firebase.crashlytics.FirebaseCrashlytics
 import io.github.lexadiky.pdx.domain.achievement.AchievementModule
 import io.github.lexadiky.pdx.lib.FeatureToggleManager
 import io.github.lexadiky.pdx.lib.FeatureToggleModule
@@ -25,6 +26,7 @@ class PdxApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
+
         ApplicationInitializer()
             .task("sync_feature_toggles") { diContainer.lookup<FeatureToggleManager>().sync() }
             .run()

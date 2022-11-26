@@ -26,6 +26,9 @@ dependencies {
     implementation(projects.features.pokemonList)
     implementation(projects.features.pokemonDetails)
 
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.crashlytics)
+
     testImplementation(libs.junit4.core)
     androidTestImplementation(libs.android.test.junit4)
     androidTestImplementation(libs.android.test.espresso)
