@@ -1,5 +1,7 @@
 package io.github.lexadiky.pdx.lib.arc.di
 
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.lifecycle.ViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.module.Module
@@ -44,3 +46,7 @@ fun module(definition: ModuleBuilder.() -> Unit): Lazy<DIModule> = lazy {
 
 fun eagerModule(definition: ModuleBuilder.() -> Unit): DIModule =
     DIModule(ModuleBuilder(module { }).apply(definition).module)
+
+@Composable
+fun eagerModule(vararg keys: Any, definition: ModuleBuilder.() -> Unit): DIModule =
+    remember(keys = keys) { eagerModule(definition) }

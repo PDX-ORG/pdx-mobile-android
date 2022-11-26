@@ -24,6 +24,7 @@ dependencies {
     implementation(projects.features.news)
     implementation(projects.features.settings)
     implementation(projects.features.pokemonList)
+    implementation(projects.features.pokemonDetails)
 
     testImplementation(libs.junit4.core)
     androidTestImplementation(libs.android.test.junit4)

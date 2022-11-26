@@ -15,6 +15,7 @@ import io.github.lexadiky.pdx.feature.pokemon.list.entity.domain.PokemonPreview
 import io.github.lexadiky.pdx.feature.pokemon.list.usecase.GetPokemonUseCase
 import io.github.lexadiky.pdx.domain.achievement.library.ShinyShakeAchievement
 import io.github.lexadiky.pdx.feature.pokemonlist.R
+import io.github.lexadiky.pdx.lib.navigation.Navigator
 import io.github.lexadiky.pdx.lib.resources.color.*
 import io.github.lexadiky.pdx.lib.resources.image.*
 import io.github.lexadiky.pdx.lib.resources.string.*
@@ -27,7 +28,8 @@ import kotlin.time.Duration.Companion.seconds
 internal class PokemonListViewModel(
     private val getPokemon: GetPokemonUseCase,
     private val shakeDetector: ShakeDetector,
-    private val achievementManager: AchievementManager
+    private val achievementManager: AchievementManager,
+    private val navigator: Navigator
 ) : ViewModel() {
 
     var state by mutableStateOf(PokemonListState())
@@ -75,6 +77,12 @@ internal class PokemonListViewModel(
         state = state.copy(
             searchActivated = !state.searchActivated
         )
+    }
+
+    fun openDetails(pokemonListEntry: PokemonListEntry) {
+        viewModelScope.launch {
+            navigator.navigate("pdx://pokemon/${pokemonListEntry.id}")
+        }
     }
 
     companion object {

@@ -7,6 +7,7 @@ import androidx.navigation.compose.composable
 import io.github.lexadiky.pdx.feature.settings.achievement.AchievementSettingsPage
 import io.github.lexadiky.pdx.feature.news.NewsFeatureToggle
 import io.github.lexadiky.pdx.feature.news.NewsFeedPage
+import io.github.lexadiky.pdx.feature.pokemon.details.PokemonDetailsPage
 import io.github.lexadiky.pdx.feature.pokemon.list.PokemonListPage
 import io.github.lexadiky.pdx.feature.settings.SettingsPage
 import io.github.lexadiky.pdx.lib.FeatureToggleManager
@@ -32,6 +33,11 @@ fun routing(): NavGraphBuilder.() -> Unit {
             }
             composable("pdx://pokemon") {
                 PokemonListPage()
+            }
+            composable("pdx://pokemon/{id}") { entry ->
+                PokemonDetailsPage(
+                    pokemonId = entry.arguments!!.getString("id")!!
+                )
             }
         }
     }

@@ -97,7 +97,7 @@ private fun PokemonListPageImpl(viewModel: PokemonListViewModel) {
                                     it.toColorResource()
                                 )
                             },
-                            onClick = { /*TODO*/ },
+                            onClick = { viewModel.openDetails(entry) },
                             modifier = Modifier.fillMaxWidth()
                         )
                     }
