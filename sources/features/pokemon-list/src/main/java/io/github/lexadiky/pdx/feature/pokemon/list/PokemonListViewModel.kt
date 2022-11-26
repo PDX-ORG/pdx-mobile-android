@@ -8,7 +8,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import arrow.core.Either
 import io.github.lexadiky.pdx.feature.pokemon.list.entity.PokemonListEntry
+import io.github.lexadiky.pdx.feature.pokemon.list.entity.SearchQuery
 import io.github.lexadiky.pdx.feature.pokemon.list.entity.domain.PokemonLanguage
+import io.github.lexadiky.pdx.feature.pokemon.list.entity.domain.PokemonPreview
 import io.github.lexadiky.pdx.feature.pokemon.list.usecase.GetPokemonUseCase
 import io.github.lexadiky.pdx.feature.pokemonlist.R
 import io.github.lexadiky.pdx.lib.resources.color.*
@@ -43,7 +45,8 @@ internal class PokemonListViewModel(
                         ?: ImageResource.from(io.github.lexadiky.pdx.lib.uikit.R.drawable.uikit_ic_pokeball),
                     alternativeImage = pokemon.shinySprite?.let { ImageResource.from(it) }
                         ?: ImageResource.from(io.github.lexadiky.pdx.lib.uikit.R.drawable.uikit_ic_pokeball),
-                    types = pokemon.types
+                    types = pokemon.types,
+                    textSearchIndex = pokemon.toTextSearchIndex()
                 )
             }
             state = state.copy(items = entries)
@@ -51,9 +54,23 @@ internal class PokemonListViewModel(
 
         viewModelScope.launch {
             shakeDetector.events.debounce(ALTERNATIVE_IMAGE_CHANGE_DEBOUNCE).collectLatest {
-               state = state.copy(useAlternativeImages = !state.useAlternativeImages)
+                state = state.copy(useAlternativeImages = !state.useAlternativeImages)
             }
         }
+    }
+
+    private fun PokemonPreview.toTextSearchIndex(): String {
+        return localNames.values.joinToString { it.lowercase() }
+    }
+
+    fun updateQuery(query: SearchQuery) {
+       state = state.copy(query = query)
+    }
+
+    fun toggleSearchMode() {
+        state = state.copy(
+            searchActivated = !state.searchActivated
+        )
     }
 
     companion object {

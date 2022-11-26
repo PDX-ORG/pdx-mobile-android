@@ -13,5 +13,6 @@ internal data class PokemonListEntry(
     val secondaryColor: ColorResource,
     val image: ImageResource,
     val alternativeImage: ImageResource,
-    val types: List<PokemonType>
+    val types: List<PokemonType>,
+    val textSearchIndex: String,
 )

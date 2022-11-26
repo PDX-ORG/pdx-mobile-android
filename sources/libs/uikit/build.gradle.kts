@@ -20,6 +20,8 @@ dependencies {
     api(libs.android.compose.ui.preview)
     api(libs.android.compose.material3)
 
+    api(libs.accompanist.flowlayout)
+
     api(libs.coil.compose.base)
 
     implementation(projects.libs.blogger)

@@ -111,7 +111,8 @@ private fun TagStrip(tags: List<TagItem>, modifier: Modifier = Modifier) {
             ElevatedSuggestionChip(
                 label = { Text(text = tag.title.render().value) },
                 colors = SuggestionChipDefaults.elevatedSuggestionChipColors(
-                    containerColor = tag.color.render()
+                    containerColor = tag.color.render(),
+                    labelColor = MaterialTheme.colorScheme.onError
                 ),
                 enabled = true,
                 onClick = {}
