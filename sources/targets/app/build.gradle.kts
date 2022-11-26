@@ -18,6 +18,7 @@ dependencies {
     implementation(projects.libs.navigation)
     implementation(projects.libs.analytics)
     implementation(projects.libs.blogger)
+    implementation(projects.domain.achievement)
     implementation(projects.features.toolbar)
     implementation(projects.features.drawer)
     implementation(projects.features.news)

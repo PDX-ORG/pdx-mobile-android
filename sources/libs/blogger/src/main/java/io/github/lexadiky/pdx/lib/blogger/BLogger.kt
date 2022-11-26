@@ -2,7 +2,7 @@ package io.github.lexadiky.pdx.lib.blogger
 
 object BLogger : LoggerDelegate {
 
-    val delegate: LoggerDelegate = LogcatLoggerDelegate()
+    private val delegate: LoggerDelegate = LogcatLoggerDelegate()
 
     override fun log(level: LoggerLevel, tag: String?, message: String, throwable: Throwable?) {
         delegate.log(level, tag, message, throwable)

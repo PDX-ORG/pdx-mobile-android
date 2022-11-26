@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="achievement_notification_channel_name">Achievements</string>
+    <string name="achievement_notification_channel_description">Achievements that you received</string>
+
+    <string name="achievement_lib_shiny_shake_name">Shiny Shake</string>
+    <string name="achievement_lib_shiny_shake_description">Shake device to see shiny pokemon!</string>
+
+</resources>

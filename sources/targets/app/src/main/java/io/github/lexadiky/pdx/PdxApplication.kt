@@ -1,6 +1,7 @@
 package io.github.lexadiky.pdx
 
 import android.app.Application
+import io.github.lexadiky.pdx.domain.achievement.AchievementModule
 import io.github.lexadiky.pdx.lib.FeatureToggleManager
 import io.github.lexadiky.pdx.lib.FeatureToggleModule
 import io.github.lexadiky.pdx.lib.analytics.AnalyticsModule
@@ -18,6 +19,7 @@ class PdxApplication : Application() {
         NetworkModule,
         FeatureToggleModule,
         UikitModule,
+        AchievementModule,
         ApplicationModule(this)
     )
 

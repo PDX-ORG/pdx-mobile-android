@@ -1,5 +1,6 @@
 package io.github.lexadiky.pdx.ui.uikit.resources
 
+import android.content.Context
 import android.text.format.DateFormat
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
@@ -37,11 +38,24 @@ fun StringResource.render(): State<String> {
                 mutableStateOf(formatted)
             }
         }
+
         is FormattedStringResource -> {
             val renderedBase by this.base.render()
             remember {
                 derivedStateOf { renderedBase.format(*this.arguments) }
             }
         }
+    }
+}
+
+fun StringResource.render(context: Context): String {
+    return when (this) {
+        is FormattedStringResource -> this.base.render(context)
+            .format(*this.arguments)
+        is LiteralStringResource -> this.value
+        is ResStringResource -> context.getString(this.stringRes)
+        is TemporalStringResource -> DateFormat.getDateFormat(context)
+            .format(Date(instant.epochSeconds * 1000))
+
     }
 }

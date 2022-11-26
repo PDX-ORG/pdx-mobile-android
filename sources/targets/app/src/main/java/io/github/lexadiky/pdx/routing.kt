@@ -1,10 +1,10 @@
 package io.github.lexadiky.pdx
 
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
+import io.github.lexadiky.pdx.feature.settings.achievement.AchievementSettingsPage
 import io.github.lexadiky.pdx.feature.news.NewsFeatureToggle
 import io.github.lexadiky.pdx.feature.news.NewsFeedPage
 import io.github.lexadiky.pdx.feature.pokemon.list.PokemonListPage
@@ -21,6 +21,9 @@ fun routing(): NavGraphBuilder.() -> Unit {
         {
             composable("pdx://settings") {
                 SettingsPage()
+            }
+            composable("pdx://settings/achievements") {
+                AchievementSettingsPage()
             }
             toggleManager.ifEnabled(NewsFeatureToggle) {
                 composable("pdx://news") {

@@ -7,11 +7,13 @@ import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import arrow.core.Either
+import io.github.lexadiky.pdx.domain.achievement.AchievementManager
 import io.github.lexadiky.pdx.feature.pokemon.list.entity.PokemonListEntry
 import io.github.lexadiky.pdx.feature.pokemon.list.entity.SearchQuery
 import io.github.lexadiky.pdx.feature.pokemon.list.entity.domain.PokemonLanguage
 import io.github.lexadiky.pdx.feature.pokemon.list.entity.domain.PokemonPreview
 import io.github.lexadiky.pdx.feature.pokemon.list.usecase.GetPokemonUseCase
+import io.github.lexadiky.pdx.domain.achievement.library.ShinyShakeAchievement
 import io.github.lexadiky.pdx.feature.pokemonlist.R
 import io.github.lexadiky.pdx.lib.resources.color.*
 import io.github.lexadiky.pdx.lib.resources.image.*
@@ -24,7 +26,8 @@ import kotlin.time.Duration.Companion.seconds
 
 internal class PokemonListViewModel(
     private val getPokemon: GetPokemonUseCase,
-    private val shakeDetector: ShakeDetector
+    private val shakeDetector: ShakeDetector,
+    private val achievementManager: AchievementManager
 ) : ViewModel() {
 
     var state by mutableStateOf(PokemonListState())
@@ -55,6 +58,7 @@ internal class PokemonListViewModel(
         viewModelScope.launch {
             shakeDetector.events.debounce(ALTERNATIVE_IMAGE_CHANGE_DEBOUNCE).collectLatest {
                 state = state.copy(useAlternativeImages = !state.useAlternativeImages)
+                achievementManager.give(ShinyShakeAchievement())
             }
         }
     }

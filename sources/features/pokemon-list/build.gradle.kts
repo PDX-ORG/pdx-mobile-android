@@ -17,4 +17,5 @@ dependencies {
     implementation(projects.libs.blogger)
 
     implementation(projects.domain.pokemon)
+    implementation(projects.domain.achievement)
 }

@@ -9,4 +9,10 @@
     <string name="settings_cache_header">Drop cached data</string>
     <string name="settings_cache_description">Use this is something seems wrong, or you want to update whole application data</string>
 
+    <string name="settings_achievements_header">Manage achievements</string>
+    <string name="settings_achievements_description">See earned ones or delete your progress</string>
+
+    <string name="settings_achievements_option_forget_title">Forget all achievements</string>
+    <string name="settings_achievements_option_forget_subtitle">If you want to receive them one more time</string>
+
 </resources>

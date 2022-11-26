@@ -37,4 +37,10 @@ internal class SettingsPageViewModel(
             navigator.navigate("https://github.com/PDX-ORG/pdx-mobile-android")
         }
     }
+
+    fun openAchievements() {
+        viewModelScope.launch {
+            navigator.navigate("pdx://settings/achievements")
+        }
+    }
 }
