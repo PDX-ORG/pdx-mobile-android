@@ -21,7 +21,8 @@ class EvePlugin : Plugin<Project> {
             input.set(inputFile)
             output.set(outputFile)
         }
-
+        target.tasks.findByName("preBuild")
+            ?.dependsOn("eveBuild")
 
         target.extensions.findByType<KotlinProjectExtension>()!!.apply {
             sourceSets.getByName("main") {
