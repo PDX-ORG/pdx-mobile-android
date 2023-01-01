@@ -6,7 +6,9 @@ import io.github.lexadiky.pdx.feature.news.feed.NewsFeedViewModel
 import io.github.lexadiky.pdx.lib.arc.di.module
 
 internal val NewsModule by module {
-    single { RedditNewsClient(inject()) }
-    single { GetNewsFeedUseCase(inject()) }
-    viewModel<NewsFeedViewModel> { NewsFeedViewModel(inject(), inject()) }
+    internal {
+        single { RedditNewsClient(inject()) }
+        single { GetNewsFeedUseCase(inject()) }
+        viewModel { NewsFeedViewModel(inject(), inject()) }
+    }
 }

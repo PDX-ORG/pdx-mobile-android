@@ -7,7 +7,6 @@ import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings
 import io.github.lexadiky.pdx.lib.blogger.BLogger
 import io.github.lexadiky.pdx.lib.blogger.error
 import io.github.lexadiky.pdx.lib.blogger.info
-import io.github.lexadiky.pdx.lib.ftoggle.BuildConfig
 import kotlinx.coroutines.suspendCancellableCoroutine
 import kotlinx.coroutines.withTimeout
 import kotlin.coroutines.resume
@@ -20,7 +19,7 @@ class FeatureToggleManager {
 
     init {
         val settings = FirebaseRemoteConfigSettings.Builder()
-            .setMinimumFetchIntervalInSeconds(if (BuildConfig.DEBUG) 0 else 3600)
+            // TODO .setMinimumFetchIntervalInSeconds(if (BuildConfig.DEBUG) 0 else 3600)
             .build()
         firebaseRemoteConfig.setConfigSettingsAsync(settings)
             .addOnFailureListener { throwable ->

@@ -1,6 +1,6 @@
 package io.github.lexadiky.pdx.lib.blogger
 
-object BLogger : LoggerDelegate {
+object BLogger : ContextualLoggerDelegate {
 
     private val delegate: LoggerDelegate = LogcatLoggerDelegate()
 

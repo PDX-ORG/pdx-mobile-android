@@ -1,11 +1,10 @@
-package io.github.lexadiky.pdx.feature.pokemon.list.entity.domain
+package io.github.lexadiky.pdx.domain.pokemon.entity
 
-import io.github.lexadiky.pdx.domain.pokemon.entity.PokemonType
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-internal class PokemonPreview(
+class PokemonPreview(
     @SerialName("name")
     val name: String,
     @SerialName("national_dex_number")

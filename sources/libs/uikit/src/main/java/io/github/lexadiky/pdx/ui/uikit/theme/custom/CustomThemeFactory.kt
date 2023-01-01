@@ -1,5 +1,6 @@
 package io.github.lexadiky.pdx.ui.uikit.theme.custom
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Build
 import androidx.compose.material3.darkColorScheme
@@ -13,16 +14,17 @@ import io.github.lexadiky.pdx.ui.uikit.util.toColorScheme
 
 internal class CustomThemeFactory(private val context: Context) {
 
-    private val defaultThems = createDefaultThemes()
+    private val defaultThemes = createDefaultThemes()
 
     fun create(): List<CustomTheme> {
-        return defaultThems + createPokemonTypeThemes()
+        return defaultThemes + createPokemonTypeThemes()
     }
 
     fun default(isDark: Boolean): CustomTheme {
-        return defaultThems.first { it.isDark == isDark }
+        return defaultThemes.first { it.isDark == isDark }
     }
 
+    @SuppressLint("RestrictedApi")
     private fun createPokemonTypeThemes(): List<CustomTheme> {
         val typeColors = listOf(
             "type-normal" to Color(0xFFA8A77A),

@@ -5,9 +5,9 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import io.github.lexadiky.pdx.domain.pokemon.entity.PokemonType
-import io.github.lexadiky.pdx.feature.pokemon.list.entity.SearchQuery
+import io.github.lexadiky.pdx.feature.pokemon.list.entity.PokemonSearchQuery
 
-internal class PokemonFilterViewModel(private val queryChangedCallback: (SearchQuery) -> Unit) :
+internal class PokemonFilterViewModel(private val queryChangedCallback: (PokemonSearchQuery) -> Unit) :
     ViewModel() {
 
     var state: PokemonFilterState by mutableStateOf(PokemonFilterState())
@@ -33,26 +33,26 @@ internal class PokemonFilterViewModel(private val queryChangedCallback: (SearchQ
     }
 
     fun onTypeSelected(type: PokemonType) {
-        if (state.query.selectedTypes.size == MAX_TYPES) {
-            state = state.copy(
-                query = state.query.copy(
-                    selectedTypes = state.query.selectedTypes - state.query.selectedTypes.first()
+        val maxTypesSelectedAlready = state.query.selectedTypes.size == MAX_TYPES
+        val typeWasSelectedPreviously = type in state.query.selectedTypes
+
+        // if search query contains max selectable types, first delete first selected one
+        val newQuery = when {
+            maxTypesSelectedAlready && !typeWasSelectedPreviously ->
+                state.query.copy(
+                    selectedTypes = state.query.selectedTypes - state.query.selectedTypes.first() + type
                 )
-            )
-        }
-        state = if (type in state.query.selectedTypes) {
-            state.copy(
-                query = state.query.copy(
+            typeWasSelectedPreviously ->
+                state.query.copy(
                     selectedTypes = state.query.selectedTypes - type
                 )
-            )
-        } else {
-            state.copy(
-                query = state.query.copy(
+            else ->
+                state.query.copy(
                     selectedTypes = state.query.selectedTypes + type
                 )
-            )
         }
+
+        state = state.copy(query = newQuery)
         queryChangedCallback(state.query)
     }
 

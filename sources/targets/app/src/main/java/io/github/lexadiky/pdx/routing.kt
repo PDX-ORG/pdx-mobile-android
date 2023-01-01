@@ -10,6 +10,7 @@ import io.github.lexadiky.pdx.feature.news.NewsFeedPage
 import io.github.lexadiky.pdx.feature.pokemon.details.PokemonDetailsPage
 import io.github.lexadiky.pdx.feature.pokemon.list.PokemonListPage
 import io.github.lexadiky.pdx.feature.settings.SettingsPage
+import io.github.lexadiky.pdx.feature.typechart.TypePage
 import io.github.lexadiky.pdx.lib.FeatureToggleManager
 import io.github.lexadiky.pdx.lib.arc.di.di
 import io.github.lexadiky.pdx.lib.ifEnabled
@@ -38,6 +39,9 @@ fun routing(): NavGraphBuilder.() -> Unit {
                 PokemonDetailsPage(
                     pokemonId = entry.arguments!!.getString("id")!!
                 )
+            }
+            composable("pdx://type") {
+                TypePage()
             }
         }
     }

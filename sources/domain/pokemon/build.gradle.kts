@@ -14,4 +14,5 @@ android {
 dependencies {
     implementation(projects.libs.network)
     implementation(projects.libs.resources)
+    implementation(projects.libs.blogger)
 }

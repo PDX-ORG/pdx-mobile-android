@@ -1,0 +1,446 @@
+{
+	"normal": {
+		"double_from": [
+			"fighting"
+		],
+		"double_to": [],
+		"half_from": [],
+		"half_to": [
+			"rock",
+			"steel"
+		],
+		"zero_from": [
+			"ghost"
+		],
+		"zero_to": [
+			"ghost"
+		]
+	},
+	"fighting": {
+		"double_from": [
+			"flying",
+			"psychic",
+			"fairy"
+		],
+		"double_to": [
+			"normal",
+			"rock",
+			"steel",
+			"ice",
+			"dark"
+		],
+		"half_from": [
+			"rock",
+			"bug",
+			"dark"
+		],
+		"half_to": [
+			"flying",
+			"poison",
+			"bug",
+			"psychic",
+			"fairy"
+		],
+		"zero_from": [],
+		"zero_to": [
+			"ghost"
+		]
+	},
+	"flying": {
+		"double_from": [
+			"rock",
+			"electric",
+			"ice"
+		],
+		"double_to": [
+			"fighting",
+			"bug",
+			"grass"
+		],
+		"half_from": [
+			"fighting",
+			"bug",
+			"grass"
+		],
+		"half_to": [
+			"rock",
+			"steel",
+			"electric"
+		],
+		"zero_from": [
+			"ground"
+		],
+		"zero_to": []
+	},
+	"poison": {
+		"double_from": [
+			"ground",
+			"psychic"
+		],
+		"double_to": [
+			"grass",
+			"fairy"
+		],
+		"half_from": [
+			"fighting",
+			"poison",
+			"bug",
+			"grass",
+			"fairy"
+		],
+		"half_to": [
+			"poison",
+			"ground",
+			"rock",
+			"ghost"
+		],
+		"zero_from": [],
+		"zero_to": [
+			"steel"
+		]
+	},
+	"ground": {
+		"double_from": [
+			"water",
+			"grass",
+			"ice"
+		],
+		"double_to": [
+			"poison",
+			"rock",
+			"steel",
+			"fire",
+			"electric"
+		],
+		"half_from": [
+			"poison",
+			"rock"
+		],
+		"half_to": [
+			"bug",
+			"grass"
+		],
+		"zero_from": [
+			"electric"
+		],
+		"zero_to": [
+			"flying"
+		]
+	},
+	"rock": {
+		"double_from": [
+			"fighting",
+			"ground",
+			"steel",
+			"water",
+			"grass"
+		],
+		"double_to": [
+			"flying",
+			"bug",
+			"fire",
+			"ice"
+		],
+		"half_from": [
+			"normal",
+			"flying",
+			"poison",
+			"fire"
+		],
+		"half_to": [
+			"fighting",
+			"ground",
+			"steel"
+		],
+		"zero_from": [],
+		"zero_to": []
+	},
+	"bug": {
+		"double_from": [
+			"flying",
+			"rock",
+			"fire"
+		],
+		"double_to": [
+			"grass",
+			"psychic",
+			"dark"
+		],
+		"half_from": [
+			"fighting",
+			"ground",
+			"grass"
+		],
+		"half_to": [
+			"fighting",
+			"flying",
+			"poison",
+			"ghost",
+			"steel",
+			"fire",
+			"fairy"
+		],
+		"zero_from": [],
+		"zero_to": []
+	},
+	"ghost": {
+		"double_from": [
+			"ghost",
+			"dark"
+		],
+		"double_to": [
+			"ghost",
+			"psychic"
+		],
+		"half_from": [
+			"poison",
+			"bug"
+		],
+		"half_to": [
+			"dark"
+		],
+		"zero_from": [
+			"normal",
+			"fighting"
+		],
+		"zero_to": [
+			"normal"
+		]
+	},
+	"steel": {
+		"double_from": [
+			"fighting",
+			"ground",
+			"fire"
+		],
+		"double_to": [
+			"rock",
+			"ice",
+			"fairy"
+		],
+		"half_from": [
+			"normal",
+			"flying",
+			"rock",
+			"bug",
+			"steel",
+			"grass",
+			"psychic",
+			"ice",
+			"dragon",
+			"fairy"
+		],
+		"half_to": [
+			"steel",
+			"fire",
+			"water",
+			"electric"
+		],
+		"zero_from": [
+			"poison"
+		],
+		"zero_to": []
+	},
+	"fire": {
+		"double_from": [
+			"ground",
+			"rock",
+			"water"
+		],
+		"double_to": [
+			"bug",
+			"steel",
+			"grass",
+			"ice"
+		],
+		"half_from": [
+			"bug",
+			"steel",
+			"fire",
+			"grass",
+			"ice",
+			"fairy"
+		],
+		"half_to": [
+			"rock",
+			"fire",
+			"water",
+			"dragon"
+		],
+		"zero_from": [],
+		"zero_to": []
+	},
+	"water": {
+		"double_from": [
+			"grass",
+			"electric"
+		],
+		"double_to": [
+			"ground",
+			"rock",
+			"fire"
+		],
+		"half_from": [
+			"steel",
+			"fire",
+			"water",
+			"ice"
+		],
+		"half_to": [
+			"water",
+			"grass",
+			"dragon"
+		],
+		"zero_from": [],
+		"zero_to": []
+	},
+	"grass": {
+		"double_from": [
+			"flying",
+			"poison",
+			"bug",
+			"fire",
+			"ice"
+		],
+		"double_to": [
+			"ground",
+			"rock",
+			"water"
+		],
+		"half_from": [
+			"ground",
+			"water",
+			"grass",
+			"electric"
+		],
+		"half_to": [
+			"flying",
+			"poison",
+			"bug",
+			"steel",
+			"fire",
+			"grass",
+			"dragon"
+		],
+		"zero_from": [],
+		"zero_to": []
+	},
+	"electric": {
+		"double_from": [
+			"ground"
+		],
+		"double_to": [
+			"flying",
+			"water"
+		],
+		"half_from": [
+			"flying",
+			"steel",
+			"electric"
+		],
+		"half_to": [
+			"grass",
+			"electric",
+			"dragon"
+		],
+		"zero_from": [],
+		"zero_to": [
+			"ground"
+		]
+	},
+	"psychic": {
+		"double_from": [
+			"bug",
+			"ghost",
+			"dark"
+		],
+		"double_to": [
+			"fighting",
+			"poison"
+		],
+		"half_from": [
+			"fighting",
+			"psychic"
+		],
+		"half_to": [
+			"steel",
+			"psychic"
+		],
+		"zero_from": [],
+		"zero_to": [
+			"dark"
+		]
+	},
+	"ice": {
+		"double_from": [
+			"fighting",
+			"rock",
+			"steel",
+			"fire"
+		],
+		"double_to": [
+			"flying",
+			"ground",
+			"grass",
+			"dragon"
+		],
+		"half_from": [
+			"ice"
+		],
+		"half_to": [
+			"steel",
+			"fire",
+			"water",
+			"ice"
+		],
+		"zero_from": [],
+		"zero_to": []
+	},
+	"dragon": {
+		"double_from": [
+			"ice",
+			"dragon",
+			"fairy"
+		],
+		"double_to": [
+			"dragon"
+		],
+		"half_from": [
+			"fire",
+			"water",
+			"grass",
+			"electric"
+		],
+		"half_to": [
+			"steel"
+		],
+		"zero_from": [],
+		"zero_to": [
+			"fairy"
+		]
+	},
+	"dark": {
+		"double_from": [
+			"fighting",
+			"bug",
+			"fairy"
+		],
+		"double_to": [
+			"ghost",
+			"psychic"
+		],
+		"half_from": [
+			"ghost",
+			"dark"
+		],
+		"half_to": [
+			"fighting",
+			"dark",
+			"fairy"
+		],
+		"zero_from": [
+			"psychic"
+		],
+		"zero_to": []
+	}
+}

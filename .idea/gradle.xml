@@ -25,7 +25,7 @@
         <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleJvm" value="Embedded JDK" />
+        <option name="gradleJvm" value="jbr-17" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
@@ -35,11 +35,13 @@
             <option value="$PROJECT_DIR$/sources/domain/achievement" />
             <option value="$PROJECT_DIR$/sources/domain/pokemon" />
             <option value="$PROJECT_DIR$/sources/features/drawer" />
+            <option value="$PROJECT_DIR$/sources/features/generic-list" />
             <option value="$PROJECT_DIR$/sources/features/news" />
             <option value="$PROJECT_DIR$/sources/features/pokemon-details" />
             <option value="$PROJECT_DIR$/sources/features/pokemon-list" />
             <option value="$PROJECT_DIR$/sources/features/settings" />
             <option value="$PROJECT_DIR$/sources/features/toolbar" />
+            <option value="$PROJECT_DIR$/sources/features/type-chart" />
             <option value="$PROJECT_DIR$/sources/libs/analytics" />
             <option value="$PROJECT_DIR$/sources/libs/arc" />
             <option value="$PROJECT_DIR$/sources/libs/blogger" />

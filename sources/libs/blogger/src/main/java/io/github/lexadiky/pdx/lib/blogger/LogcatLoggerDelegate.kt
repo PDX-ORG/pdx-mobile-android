@@ -2,7 +2,7 @@ package io.github.lexadiky.pdx.lib.blogger
 
 import android.util.Log
 
-internal class LogcatLoggerDelegate : LoggerDelegate {
+internal class LogcatLoggerDelegate : ContextualLoggerDelegate {
 
     private val tagHolder: ThreadLocal<String?> = ThreadLocal<String?>().apply {
         set(null)

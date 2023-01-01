@@ -4,6 +4,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Build
 import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material.icons.filled.Settings
+import androidx.compose.material.icons.filled.Star
 import io.github.lexadiky.pdx.feature.drawer.entity.DrawerItem
 import io.github.lexadiky.pdx.lib.ifEnabled
 import io.github.lexadiky.pdx.lib.navigation.Navigator
@@ -28,10 +29,10 @@ internal class DrawerItemSource(private val navigator: Navigator) {
                     route = "pdx://pokemon"
                 ),
                 DrawerItem.Navigation(
-                    icon = ImageResource.from(Icons.Default.Build),
-                    title = StringResource.from("Item"),
+                    icon = ImageResource.from(Icons.Default.Star),
+                    title = StringResource.from(io.github.lexadiky.pdx.feature.drawer.R.string.drawer_item_type_chart_title),
                     selected = false,
-                    route = "pdx://index"
+                    route = "pdx://type"
                 ),
                 DrawerItem.Navigation(
                     icon = ImageResource.from(Icons.Default.Build),

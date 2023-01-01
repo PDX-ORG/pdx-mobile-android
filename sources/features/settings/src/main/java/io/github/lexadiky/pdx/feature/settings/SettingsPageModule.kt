@@ -4,6 +4,8 @@ import io.github.lexadiky.pdx.feature.settings.achievement.AchievementSettingsVi
 import io.github.lexadiky.pdx.lib.arc.di.module
 
 val SettingsPageModule by module {
-    viewModel { SettingsPageViewModel(inject(), inject()) }
-    viewModel { AchievementSettingsViewModel(inject()) }
+    internal {
+        viewModel { SettingsPageViewModel(inject(), inject()) }
+        viewModel { AchievementSettingsViewModel(inject()) }
+    }
 }

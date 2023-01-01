@@ -2,6 +2,7 @@
 <resources>
 
     <string name="drawer_item_pokemon_title">Pokemon</string>
+    <string name="drawer_item_type_chart_title">Types</string>
 
     <string name="drawer_item_news_title">News</string>
     <string name="drawer_item_settings_title">Settings</string>

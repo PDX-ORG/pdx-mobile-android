@@ -15,7 +15,7 @@ import io.github.lexadiky.pdx.lib.arc.di.DIFeature
 import io.github.lexadiky.pdx.lib.arc.di.di
 import io.github.lexadiky.pdx.lib.navigation.util.registerPage404
 
-private const val START_DESTINATION = "pdx://pokemon"
+private const val START_DESTINATION = "pdx://type"
 
 object NavigationFeatureContext
 

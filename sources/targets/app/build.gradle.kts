@@ -25,6 +25,7 @@ dependencies {
     implementation(projects.features.settings)
     implementation(projects.features.pokemonList)
     implementation(projects.features.pokemonDetails)
+    implementation(projects.features.typeChart)
 
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.crashlytics)

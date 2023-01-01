@@ -1,9 +1,11 @@
 package io.github.lexadiky.pdx.ui.uikit.util
 
+import android.annotation.SuppressLint
 import androidx.compose.material3.ColorScheme
 import androidx.compose.ui.graphics.Color
 import com.google.android.material.color.utilities.Scheme
 
+@SuppressLint("RestrictedApi")
 fun Scheme.toColorScheme(): ColorScheme = ColorScheme(
     primary = this.primary.toComposeColor(),
     onPrimary = this.onPrimary.toComposeColor(),

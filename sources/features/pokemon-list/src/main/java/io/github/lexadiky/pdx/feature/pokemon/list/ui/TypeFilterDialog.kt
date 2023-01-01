@@ -37,7 +37,7 @@ internal fun TypeFilterDialog(
             }
         },
         text = {
-            FlowRow(mainAxisSpacing = MaterialTheme.sizes.s2) {
+            FlowRow(mainAxisSpacing = MaterialTheme.sizes.s1) {
                 PokemonType.values().forEach { type ->
                     FilterChip(
                         selected = type in selected,

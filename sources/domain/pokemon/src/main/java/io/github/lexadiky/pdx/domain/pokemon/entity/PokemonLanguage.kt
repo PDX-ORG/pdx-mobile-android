@@ -1,8 +1,8 @@
-package io.github.lexadiky.pdx.feature.pokemon.list.entity.domain
+package io.github.lexadiky.pdx.domain.pokemon.entity
 
 import kotlinx.serialization.SerialName
 
-internal enum class PokemonLanguage {
+enum class PokemonLanguage {
     @SerialName("roomaji")
     JA_ROOMAJI,
     @SerialName("en")

@@ -9,5 +9,8 @@ internal fun NavigationModule(controller: NavHostController, navGraph: NavGraph)
     single { controller }
     single { navGraph }
     single { Navigator(inject(), inject(), inject(), inject()) }
-    single { NavigationEventsSpec(inject()) }
+
+    internal {
+        single { NavigationEventsSpec(inject()) }
+    }
 }

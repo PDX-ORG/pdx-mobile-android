@@ -11,6 +11,7 @@ dependencies {
     api(libs.kotlin.coroutines)
     api(libs.arrow.core)
 
+    implementation(libs.kotlin.reflection)
     implementation(libs.koin.compose)
     implementation(libs.android.compose.ui.core)
     implementation(libs.android.compose.viewmodel)
