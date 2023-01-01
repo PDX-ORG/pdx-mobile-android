@@ -9,7 +9,7 @@ pluginManagement {
 
 }
 
-rootProject.name = "lexadky-template-android-build-preset"
+rootProject.name = "plugins"
 
-include(":preset")
-include(":module-generator")
+include(":eve")
+

@@ -5,7 +5,7 @@ import android.content.Intent
 import android.net.Uri
 import androidx.navigation.NavGraph
 import androidx.navigation.NavHostController
-
+import io.github.lexadiky.pdx.generated.analytics.NavigationEventsSpec
 
 class Navigator internal constructor(
     private val context: Context,
@@ -15,7 +15,7 @@ class Navigator internal constructor(
 ) {
 
     suspend fun navigate(route: String) {
-        navigationEventsSpec.navigate(route)
+        navigationEventsSpec.devNavigationNavigate(route)
         if (route.startsWith(LINK_PREFIX_HTTPS) || route.startsWith(LINK_PREFIX_HTTP)) {
             val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(route)).apply {
                 addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)

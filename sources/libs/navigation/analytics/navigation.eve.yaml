@@ -1,0 +1,3 @@
+event:dev_navigation_navigate:
+  arguments:
+    string:route:

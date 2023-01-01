@@ -12,11 +12,10 @@
                   <project path="$PROJECT_DIR$/sources/plugins/android" />
                 </projects>
               </build>
-              <build path="$PROJECT_DIR$/sources/plugins" name="lexadky-template-android-build-preset">
+              <build path="$PROJECT_DIR$/sources/plugins" name="plugins">
                 <projects>
                   <project path="$PROJECT_DIR$/sources/plugins" />
-                  <project path="$PROJECT_DIR$/sources/plugins/module-generator" />
-                  <project path="$PROJECT_DIR$/sources/plugins/preset" />
+                  <project path="$PROJECT_DIR$/sources/plugins/eve" />
                 </projects>
               </build>
             </builds>
@@ -53,8 +52,7 @@
             <option value="$PROJECT_DIR$/sources/libs/uikit" />
             <option value="$PROJECT_DIR$/sources/plugins" />
             <option value="$PROJECT_DIR$/sources/plugins/android" />
-            <option value="$PROJECT_DIR$/sources/plugins/module-generator" />
-            <option value="$PROJECT_DIR$/sources/plugins/preset" />
+            <option value="$PROJECT_DIR$/sources/plugins/eve" />
             <option value="$PROJECT_DIR$/sources/targets/app" />
             <option value="$PROJECT_DIR$/targets" />
           </set>
