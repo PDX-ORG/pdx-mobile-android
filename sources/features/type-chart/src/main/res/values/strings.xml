@@ -5,7 +5,7 @@
     <string name="type_tab_search_title">Search</string>
 
     <string name="type_chart_modifier">x %s</string>
-    <string name="type_chart_section_attack_title">Attack</string>
-    <string name="type_chart_section_defence_title">Defence</string>
+    <string name="type_chart_section_attack_title">Deals damage to</string>
+    <string name="type_chart_section_defence_title">Takes Damage from</string>
 
 </resources>

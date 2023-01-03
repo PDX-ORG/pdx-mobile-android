@@ -96,8 +96,6 @@ private fun <T : GenericListItem> GenericListPageImpl(
                                 item = entry,
                                 useAlternativeImages = viewModel.state.useAlternativeImages
                             ),
-                            primaryColor = Color.Red,
-                            secondaryColor = Color.Yellow,
                             tags = entry.tags.map { TagItem(it.text, it.color) },
                             onClick = { viewModel.openDetails(entry) },
                             modifier = Modifier.fillMaxWidth()

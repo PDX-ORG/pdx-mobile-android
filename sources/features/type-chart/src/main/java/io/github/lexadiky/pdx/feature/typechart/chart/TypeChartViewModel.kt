@@ -9,7 +9,9 @@ import io.github.lexadiky.pdx.domain.pokemon.entity.PokemonType
 import io.github.lexadiky.pdx.domain.pokemon.usecase.GetPokemonTypeDamageRelations
 import kotlinx.coroutines.launch
 
-internal class TypeChartViewModel(private val getPokemonDamageRelations: GetPokemonTypeDamageRelations) : ViewModel() {
+internal class TypeChartViewModel(
+    private val getPokemonDamageRelations: GetPokemonTypeDamageRelations
+) : ViewModel() {
 
     var state by mutableStateOf(TypeChartState())
         private set
@@ -17,7 +19,9 @@ internal class TypeChartViewModel(private val getPokemonDamageRelations: GetPoke
     init {
         viewModelScope.launch {
             state = state.copy(
-                damageRelations = getPokemonDamageRelations().orNull().orEmpty() // TODO add error handling
+                damageRelationsSubState = state.damageRelationsSubState.copy(
+                    damageRelations = getPokemonDamageRelations().orNull().orEmpty() // TODO add error handling
+                )
             )
         }
     }

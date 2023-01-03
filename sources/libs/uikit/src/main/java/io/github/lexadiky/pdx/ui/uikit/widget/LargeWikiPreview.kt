@@ -19,7 +19,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Card
-import androidx.compose.material3.ChipColors
 import androidx.compose.material3.ElevatedSuggestionChip
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
@@ -28,7 +27,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import io.github.lexadiky.pdx.lib.resources.color.ColorResource
 import io.github.lexadiky.pdx.lib.resources.string.StringResource
@@ -41,14 +39,12 @@ fun LargeWikiPreview(
     preTitle: String?,
     title: String,
     image: Painter,
-    primaryColor: Color?,
-    secondaryColor: Color?,
     tags: List<TagItem>,
-    onClick: () -> Unit,
+    onClick: (() -> Unit)? = null,
     modifier: Modifier = Modifier
 ) {
     Card(
-        onClick = onClick,
+        onClick = { onClick?.invoke() },
         modifier = modifier
     ) {
         Box(

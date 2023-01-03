@@ -9,7 +9,6 @@ android {
 }
 
 dependencies {
-    implementation(projects.features.genericList)
     implementation(projects.domain.pokemon)
 
     implementation(projects.libs.arc)

@@ -13,6 +13,7 @@ import io.github.lexadiky.pdx.lib.resources.image.from
 import io.github.lexadiky.pdx.lib.resources.string.StringResource
 import io.github.lexadiky.pdx.lib.resources.string.format
 import io.github.lexadiky.pdx.lib.resources.string.from
+import io.github.lexadiky.pdx.ui.uikit.util.UikitStringFormatter
 
 internal class PokemonGenericListItemSource(
     private val getPokemon: GetPokemonPreviewUseCase
@@ -27,8 +28,7 @@ internal class PokemonGenericListItemSource(
     private fun transformToGenericListItem(pokemon: PokemonPreview) =
         PokemonGenericListItem(
             id = pokemon.name,
-            note = StringResource.from(R.string.pokemon_list_national_id_template)
-                .format(pokemon.nationalDexNumber),
+            note = UikitStringFormatter.nationalId(pokemon.nationalDexNumber),
             title = StringResource.from(pokemon.localNames[PokemonLanguage.ENGLISH]!!),
             primaryImage = pokemon.normalSprite?.let { ImageResource.from(it) }
                 ?: ImageResource.from(io.github.lexadiky.pdx.lib.uikit.R.drawable.uikit_ic_pokeball),
@@ -37,11 +37,7 @@ internal class PokemonGenericListItemSource(
             tags = pokemon.types.map { type ->
                 GenericListItem.Tag(type.toStringResource(), type.toColorResource())
             },
-            textSearchIndex = makeTextSearchIndex(pokemon),
+            textSearchIndex = pokemon.simpleSearchIndex,
             types = pokemon.types
         )
-
-    private fun makeTextSearchIndex(pokemon: PokemonPreview): String {
-        return pokemon.localNames.values.joinToString()
-    }
 }

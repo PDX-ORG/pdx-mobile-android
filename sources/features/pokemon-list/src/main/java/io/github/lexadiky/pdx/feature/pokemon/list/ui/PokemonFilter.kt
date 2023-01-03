@@ -17,14 +17,17 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import io.github.lexadiky.pdx.feature.pokemonlist.R
 import io.github.lexadiky.pdx.lib.arc.di.di
+import io.github.lexadiky.pdx.ui.uikit.widget.SearchField
 
 
 @Composable
 internal fun PokemonFilter(viewModel: PokemonFilterViewModel = di.inject()) {
     Column {
-        SearchQuery(viewModel.state.query.text) {
-            viewModel.updateTextQuery(it)
-        }
+        SearchField(
+            text = viewModel.state.query.text,
+            onTextChanged = { viewModel.updateTextQuery(it) },
+            modifier = Modifier.fillMaxWidth()
+        )
         Row {
             if (viewModel.state.showTypeFilterDialog) {
                 TypeFilterDialog(
@@ -41,16 +44,4 @@ internal fun PokemonFilter(viewModel: PokemonFilterViewModel = di.inject()) {
             )
         }
     }
-}
-
-@Composable
-private fun SearchQuery(text: String, onTextChanged: (String) -> Unit) {
-    OutlinedTextField(
-        value = text,
-        placeholder = { Text(stringResource(id = R.string.pokemon_list_query_placeholder)) },
-        label = { Text(stringResource(id = R.string.pokemon_list_query_label)) },
-        trailingIcon = { Icon(Icons.Default.Search, null) },
-        onValueChange = onTextChanged,
-        modifier = Modifier.fillMaxWidth()
-    )
 }

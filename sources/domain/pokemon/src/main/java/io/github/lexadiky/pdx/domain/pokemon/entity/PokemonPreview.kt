@@ -17,4 +17,7 @@ class PokemonPreview(
     val shinySprite: String?,
     @SerialName("types")
     val types: List<PokemonType>
-)
+) {
+    val simpleSearchIndex: String get() = localNames.values.joinToString("")
+        .lowercase()
+}

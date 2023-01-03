@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="uikit_search_field_label">Search</string>
+    <string name="uikit_search_field_placeholder">Bulba</string>
+
+    <string name="uikit_national_id_template">#%d</string>
+
+</resources>
