@@ -20,11 +20,15 @@ private const val START_DESTINATION = "pdx://type"
 object NavigationFeatureContext
 
 @Composable
-fun NavigationFeature(routing: NavGraphBuilder.() -> Unit, content: @Composable NavigationFeatureContext.() -> Unit) {
+fun NavigationFeature(
+    routing: NavGraphBuilder.() -> Unit,
+    startDestination: String = START_DESTINATION,
+    content: @Composable NavigationFeatureContext.() -> Unit
+) {
     val controller = rememberNavController()
     val navGraph = remember(controller, routing) {
         controller.setViewModelStore(ViewModelStore())
-        val navGraph = controller.createGraph(START_DESTINATION, null, routing)
+        val navGraph = controller.createGraph(startDestination, null, routing)
         navGraph
     }
 

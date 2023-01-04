@@ -54,6 +54,7 @@
             <option value="$PROJECT_DIR$/sources/plugins/android" />
             <option value="$PROJECT_DIR$/sources/plugins/eve" />
             <option value="$PROJECT_DIR$/sources/targets/app" />
+            <option value="$PROJECT_DIR$/sources/targets/type-calculator" />
             <option value="$PROJECT_DIR$/targets" />
           </set>
         </option>

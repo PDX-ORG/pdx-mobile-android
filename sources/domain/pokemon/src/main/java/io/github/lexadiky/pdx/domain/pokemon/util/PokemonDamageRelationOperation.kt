@@ -19,7 +19,7 @@ operator fun PokemonTypeDamageRelationTable.times(other: PokemonTypeDamageRelati
 }
 
 operator fun Map<PokemonType, Float>.times(other: Map<PokemonType, Float>): Map<PokemonType, Float> {
-    return mapValues { (key, value) ->
-        value * (other[key] ?: 1f)
+    return PokemonType.values().associateWith { type ->
+        this.getOrDefault(type, 1f) * other.getOrDefault(type, 1f)
     }.filterValues { it != 1f }
 }
